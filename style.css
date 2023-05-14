@@ -1,0 +1,71 @@
+/* making rotating fan wings using span */
+* {
+    /* box-sizing: border-box; */
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100vh;
+    width:100vw;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(29, 29, 33);
+}
+
+.box{
+    position: absolute;
+    top: 50px;
+  left: 50px;
+  transform: perspective(1000px) rotatey(-45deg);
+  height: 300px;
+    width:200px;
+    transform-style: preserve-3d;
+    
+}
+.box div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:100%; 
+    transform-style: preserve-3d;
+    animation: brighterWithcollerChangeusing-hue-rotate 3s linear infinite;
+}
+.box div span{
+    position: absolute;
+    top: 0;
+  left: 0;
+  display:block;
+    background: rgb(0, 255, 89);
+  height: 100%;
+    width:100%; 
+    transform-style: preserve-3d;
+}
+.box div span:nth-child(1){
+transform: rotateX(0deg);
+}
+.box div span:nth-child(2){
+transform: rotateX(60deg);
+background-color: brown;
+}
+.box div span:nth-child(3){
+transform: rotateX(95deg);
+background-color: rgb(97, 42, 165);
+
+}
+.box div span:nth-child(4){
+transform: rotateX(130deg);background-color: rgb(165, 126, 42);
+
+}
+@keyframes brighterWithcollerChangeusing-hue-rotate {
+    0%{
+transform: rotateX(0deg) ; 
+ }
+    
+    100%{
+        transform: rotateX(350deg) ; 
+
+}
+
